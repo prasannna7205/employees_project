@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'cdnlines.html' %}
+    <title>Document</title>
+    <style>
+        .jumbotron{
+            margin: 200px;
+            
+            background-color:rgb(24, 7, 7);
+            box-shadow: 0px 0px 0px 4px red;
+
+        }
+        body{
+            background-color:rgb(112, 103, 103);
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <a href="{% url 'hyderabad' %}" class="btn btn-outline-success ">Hyderabad</a>
+        <a href="{% url 'bangalore' %}" class="btn btn-outline-warning ml-4 mr-4">Bangalore</a>
+        <a href="{% url 'chennai' %}" class="btn btn-outline-danger">Chennai</a>
+        <a href="{% url 'pune' %}" class="btn btn-outline-info ml-4">Pune</a>
+
+    </div>
+</body>
+</html>

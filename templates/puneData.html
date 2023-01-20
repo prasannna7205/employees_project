@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'cdnlines.html' %}
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1 class="text-center display-3 font wight-bold"> Pune Employees Details</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/pune1.jpg' %}" alt="" style="height:80%; width: 100%;">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/pune2.jpg' %}" alt="" style="height:80%; width: 100%;">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/pune3.jpg' %}" alt="" style="height:80%; width: 100%;">
+            </div>
+        </div>
+
+    </div>
+    {% if emps %}
+    <div class="container">
+        <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered text-center">
+                            <thead class="bg-success text-white">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>first name</th>
+                                    <th>last name</th>
+                                    <th>emailid</th>
+                                    <th>company</th>
+                                    <th>salary</th>
+                                    <th>address</th>
+                            </thead>
+                            <tbody class="bg-dark text-white">
+                                {% for i in emps %}
+                                <tr>
+                                    <td>{{ i.id}}</td>
+                                    <td>{{i.first_name}}</td>
+                                    <td>{{i.last_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.company}}</td>
+                                    <td>{{i.salary}}</td>
+                                    <td>{{i.address}}</td>
+                                {% endfor %}
+                        </table>
+                    </div>
+        </div>
+    </div>    
+    {% else %}
+    <h1 class="text-center">no employees data available</h1>
+    {% endif%}
+</body>
+</html>
